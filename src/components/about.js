@@ -2,6 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 import bart from '../images/bart.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import js from '../images/icons/js.svg'
+import react from '../images/icons/react.svg'
+import redux from '../images/icons/redux.png'
+import sass from '../images/icons/sass.svg'
+import ts from '../images/icons/ts.svg'
+import formik from '../images/icons/formik.png'
+import html from '../images/icons/html.png'
+import css from '../images/icons/css.png'
+import material from '../images/icons/material.png'
 
 const AboutSection = styled.section`
 	display: flex;
@@ -16,52 +25,56 @@ const Container = styled.div`
 `
 const Wrapper = styled.div`
 	width: 50%;
+	
 `
-const Title = styled.h2``
+const Title = styled.h2`
+	@media (max-width: 920px) {
+		width: 100%;
+		text-align: center;
+	}
+`
 const Description = styled.p`
 	width: 80%;
 	margin-top: 50px;
 	color: #bdbdbd;
 	text-align: left;
+	@media (max-width: 920px) {
+		width: 100%;
+		text-align: center;
+	}
 `
 const List = styled.ul`
 	list-style: none;
 	margin: 0;
 	padding: 0;
 	display: grid;
-	grid-template-columns: repeat(2, minmax(140px, 200px));
+	grid-template-columns: repeat(3, minmax(90px, 100px));
 	margin-top: 25px;
+	@media (max-width: 920px) {
+		justify-content: center;
+	}
 `
 const Item = styled.li`
-	position: relative;
-	font-size: 14px;
 	color: #bdbdbd;
 	margin-bottom: 10px;
-
-	&:hover {
-		span {
-			color: #02d463;
-			transition: 0.2s;
-		}
-	}
+	width: 90px;
+	height: 90px;
+	background: #28212c;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 
 	.skill__icon {
-		margin-right: 15px;
-		color: #02d463;
-		width: 15px;
-		height: 15px;
+		display: block;
+		max-width: 26px;
+		height: 26px;
+		margin: 0 0 10px 0;
 	}
-
-	&.skill__jquery {
-		transition: 0.2s;
-
-		.skill__icon,
-		span {
-			color: #333;
-		}
-
-		span {
-			text-decoration: line-through;
+	@media (max-width: 920px) {
+		.skill__icon {
+			position: relative;
+			left: calc(50% - 13px);
 		}
 	}
 `
@@ -79,6 +92,17 @@ const Image = styled.img`
 `
 
 export default function About() {
+	const technologies = [
+		{ text: 'HTML', icon: html },
+		{ text: 'CSS', icon: css },
+		{ text: 'JS', icon: js },
+		{ text: 'React', icon: react },
+		{ text: 'Redux', icon: redux },
+		{ text: 'Formik', icon: formik },
+		{ text: 'SASS', icon: sass },
+		{ text: 'Material', icon: material },
+		{ text: 'TS', icon: ts }
+	]
 	return (
 		<AboutSection id='about'>
 			<div className='container--secondary container'>
@@ -92,38 +116,12 @@ export default function About() {
 						</Description>
 						<Description className='section__desc'>Technologies that I use:</Description>
 						<List>
-							<Item>
-								<FontAwesomeIcon icon={['fab', 'html5']} className='skill__icon' />
-								<ItemText>HTML</ItemText>
-							</Item>
-							<Item>
-								<FontAwesomeIcon icon={['fab', 'css3']} className='skill__icon' />
-								<ItemText>CSS</ItemText>
-							</Item>
-							<Item>
-								<FontAwesomeIcon icon={['fab', 'js-square']} className='skill__icon' />
-								<ItemText>JavaScript</ItemText>
-							</Item>
-							<Item>
-								<FontAwesomeIcon icon={['fab', 'react']} className='skill__icon' />
-								<ItemText>React</ItemText>
-							</Item>
-							<Item>
-								<FontAwesomeIcon icon={['fab', 'node-js']} className='skill__icon' />
-								<ItemText>Node.js</ItemText>
-							</Item>
-							<Item>
-								<FontAwesomeIcon icon={['fab', 'sass']} className='skill__icon' />
-								<ItemText>SCSS</ItemText>
-							</Item>
-							<Item>
-								<FontAwesomeIcon icon={['fab', 'bootstrap']} className='skill__icon' />
-								<ItemText>Bootstrap</ItemText>
-							</Item>
-							<Item className='skill__jquery'>
-								<FontAwesomeIcon icon='cross' className='skill__icon' />
-								<ItemText>jQuery</ItemText>
-							</Item>
+							{technologies.map((item) => (
+								<Item>
+									<img className='skill__icon' src={item.icon} alt={item.text} />
+									<ItemText>{item.text}</ItemText>
+								</Item>
+							))}
 						</List>
 					</Wrapper>
 					<Image style={{ width: 520 }} src={bart} alt='adilet kasymjaparov' loading='lazy' />

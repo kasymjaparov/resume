@@ -317,7 +317,7 @@ const GlobalStyle = createGlobalStyle`
       font-size: 14px;
     }
     h1 {
-      font-size: 48px;
+      font-size: 40px;
     }
     h2 {
       font-size: 24px;

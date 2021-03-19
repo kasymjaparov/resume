@@ -57,6 +57,9 @@ const Description = styled.p`
 	margin: 50px 0;
 	color: #bdbdbd;
 	text-align: left;
+	@media(max-width:500px){
+		margin:30px 0;
+	}
 `
 const Button = styled.a``
 const Right = styled.div`
