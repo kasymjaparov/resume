@@ -1,7 +1,7 @@
 {
   "name": "resume-adilet",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -20,13 +20,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "build": "set \"CI=false\" && react-scripts build"
   },
   "browserslist": {
     "production": [
