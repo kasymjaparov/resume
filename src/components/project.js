@@ -18,6 +18,11 @@ const Video = styled.div`
 	transition: 0.5s;
 	border-radius: 4px;
 	box-shadow: 0px 0px 10px black;
+	cursor:pointer;
+	&:hover {
+		opacity: 1;
+		transition: 0.2s;
+	}
 	@media (max-width: 980px) {
 		width: 200px;
 	}

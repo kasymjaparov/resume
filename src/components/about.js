@@ -97,7 +97,7 @@ export default function About() {
 								<ItemText>HTML</ItemText>
 							</Item>
 							<Item>
-								<FontAwesomeIcon icon={['fab', 'css']} className='skill__icon' />
+								<FontAwesomeIcon icon={['fab', 'css3']} className='skill__icon' />
 								<ItemText>CSS</ItemText>
 							</Item>
 							<Item>
