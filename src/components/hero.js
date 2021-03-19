@@ -120,7 +120,7 @@ export default function Hero() {
 							<Role className='hero__sub'></Role>
 							<Description className='hero__desc section__desc'>
 								A talented Front-End developer / Developer locatedin our lovely Earth Fell in love with
-								HTML, CSS, SASS, Bootstrap, JS, React, Redux, Redux-Thunk, React-Typescript, Formik,
+								HTML, CSS, SASS, Bootstrap, JS, React, Redux, Redux-Thunk, Typescript, Formik,
 								Webpack
 							</Description>
 							<Button
